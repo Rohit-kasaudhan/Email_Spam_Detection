@@ -5,7 +5,7 @@
 ![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4-orange?style=flat-square&logo=scikit-learn)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 
-A machine learning web app that classifies emails and SMS messages as **Spam** or **Ham (Legitimate)** using Multinomial Naive Bayes and TF-IDF vectorization — with a clean Streamlit GUI, deployable to Heroku.
+A machine learning web app that classifies emails and SMS messages as **Spam** or **Ham (Legitimate)** using Multinomial Naive Bayes and TF-IDF vectorization — with a clean Streamlit GUI.
 
 ---
 
@@ -27,8 +27,6 @@ email-spam-detection/
 ├── vectorizer.pkl                # TF-IDF vectorizer (generated)
 │
 ├── requirements.txt              # Python dependencies
-├── Procfile                      # Heroku process file
-├── setup.sh                      # Streamlit config for Heroku
 └── .gitignore
 ```
 
@@ -79,37 +77,6 @@ The app opens at `http://localhost:8501`.
 
 ---
 
-## ☁️ Deployment
-
-### Deploy to Heroku
-
-**Prerequisites:** [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and logged in.
-
-```bash
-# 1. Initialize git (if not already)
-git init
-git add .
-git commit -m "Initial commit"
-
-# 2. Create Heroku app
-heroku create your-app-name
-
-# 3. Push and deploy
-git push heroku main
-
-# 4. Open your live app
-heroku open
-```
-
-> ⚠️ Make sure `model.pkl` and `vectorizer.pkl` are committed before pushing.  
-> Remove them from `.gitignore` if needed:
-> ```bash
-> git add model.pkl vectorizer.pkl
-> git commit -m "Add trained model artifacts"
-> ```
-
----
-
 ## 📊 Dataset
 
 - **Source:** [UCI SMS Spam Collection](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset)
@@ -128,7 +95,6 @@ heroku open
 | Visualization | `matplotlib`, `seaborn`, `wordcloud` |
 | ML model | `scikit-learn` (MultinomialNB) |
 | Web app | `streamlit` |
-| Deployment | Heroku |
 
 ---
 
